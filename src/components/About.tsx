@@ -1,81 +1,68 @@
 import { motion } from 'motion/react';
-import { Instagram, Twitter, Youtube, Mail, MapPin } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-brand-charcoal relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl -mr-48 -mt-48" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl -ml-48 -mb-48" />
-
+    <section id="about" className="py-24 bg-brand-black relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Our Story / Video */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-accent" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand-accent" />
+            <div className="mb-8">
+              <span className="text-brand-accent text-xs uppercase tracking-[0.3em] font-bold">Overview Intro</span>
+              <h2 className="text-4xl md:text-5xl mt-2">OUR STORY</h2>
+            </div>
+            
+            <div className="relative group cursor-pointer rounded-2xl overflow-hidden aspect-video shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop" 
-                alt="Ashar Khan"
-                className="w-full aspect-[4/5] object-cover rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
+                alt="Gym Visit"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute inset-0 bg-brand-black/40 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                  <Play size={24} fill="white" />
+                </div>
+              </div>
+              {/* YouTube Style Overlay */}
+              <div className="absolute top-4 left-4 flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md" />
+                <span className="text-white text-sm font-medium">Your Gym Visit in 60 Seconds</span>
+              </div>
             </div>
           </motion.div>
 
+          {/* Who We Are */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl mb-8">The Mind Behind <span className="text-brand-accent">AK FIT</span></h2>
+            <div className="mb-8">
+              <span className="text-brand-accent text-xs uppercase tracking-[0.3em] font-bold">About Us</span>
+              <h2 className="text-4xl md:text-5xl mt-2">WHO WE ARE</h2>
+            </div>
+            
             <div className="space-y-6 text-white/70 text-lg leading-relaxed">
               <p>
-                Ashar Khan is an elite personal trainer and bodybuilding coach dedicated to helping individuals unlock their ultimate physical potential. With over a decade of experience in the fitness industry, Ashar has transformed hundreds of lives through science-backed training and nutrition.
-              </p>
-              <p>
-                Based in Karachi, Ashar offers a unique blend of high-intensity gym performance coaching and flexible home transformation programs. His philosophy centers on building a legacy—not just a body—through discipline, consistency, and expert guidance.
+                A health coaching group that helps busy people control their weight while consistently hitting new goals. All this, without losing time to life's ever changing demands. Regardless if you work less than 40 hours, or more than 70 hours in a week, results come from you putting the effort to grow 1% each day.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-white/40">Location</div>
-                  <div className="text-sm font-bold">Karachi, Pakistan</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-white/40">Contact</div>
-                  <div className="text-sm font-bold">hello@asharkhan.fit</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 flex items-center gap-6">
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-brand-black hover:border-brand-accent transition-all">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-brand-black hover:border-brand-accent transition-all">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-brand-black hover:border-brand-accent transition-all">
-                <Youtube size={20} />
-              </a>
-            </div>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-10 bg-brand-accent text-brand-black px-10 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-lg"
+            >
+              Read More
+            </motion.button>
           </motion.div>
         </div>
       </div>

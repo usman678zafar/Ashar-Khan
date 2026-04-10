@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
+import { Facebook, Twitter, Linkedin } from 'lucide-react';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,62 +10,59 @@ export default function Hero() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section 
       ref={containerRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-brand-black"
     >
       {/* Background Image with Parallax */}
       <motion.div 
         style={{ y }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-brand-black/60 to-brand-black z-10" />
+        <div className="absolute inset-0 bg-brand-black/40 z-10" />
         <img 
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
           alt="Bodybuilder training"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
+        {/* Smoke Effect Overlay (Simulated with gradients) */}
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-brand-black/20 to-brand-black/80 z-15 pointer-events-none" />
       </motion.div>
+
+      {/* Social Sidebar */}
+      <div className="absolute left-10 top-1/2 -translate-y-1/2 z-30 hidden md:flex flex-col items-center gap-8">
+        <div className="w-[1px] h-20 bg-white/20" />
+        <a href="#" className="text-white/60 hover:text-brand-accent transition-colors"><Facebook size={18} /></a>
+        <a href="#" className="text-white/60 hover:text-brand-accent transition-colors"><Twitter size={18} /></a>
+        <a href="#" className="text-white/60 hover:text-brand-accent transition-colors"><Linkedin size={18} /></a>
+        <div className="w-[1px] h-20 bg-white/20" />
+      </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-20 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ opacity }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h1 className="text-6xl md:text-9xl font-display leading-none mb-4">
-            Build Your <span className="text-brand-accent">Legacy</span>
+          <h1 className="text-6xl md:text-[120px] font-display leading-[0.9] mb-8 flex flex-col items-center">
+            <span className="text-brand-accent">YOU DON'T HAVE</span>
+            <span className="text-brand-accent">TO BE EXTREME</span>
+            <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">JUST CONSISTENT</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/70 max-w-2xl mx-auto font-light tracking-wide mb-10">
-            Elite Personal Training at the gym or in the comfort of your home.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-brand-accent text-brand-black px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:scale-105 active:scale-95">
-              Start Your Journey
-            </button>
-            <button className="w-full sm:w-auto border border-white/20 hover:border-brand-accent text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest transition-all backdrop-blur-sm">
-              View Services
-            </button>
-          </div>
+          
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-brand-accent text-brand-black px-12 py-4 rounded-full font-bold uppercase tracking-widest text-sm shadow-[0_0_30px_rgba(255,184,0,0.3)]"
+          >
+            Know More
+          </motion.button>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-brand-accent to-transparent" />
-      </motion.div>
     </section>
   );
 }

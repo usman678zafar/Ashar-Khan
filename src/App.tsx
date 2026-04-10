@@ -5,12 +5,13 @@
 
 import Header from './components/Header';
 import Hero from './components/Hero';
-import ExperienceBar from './components/ExperienceBar';
-import ServiceGrid from './components/ServiceGrid';
 import About from './components/About';
+import Features from './components/Features';
+import Classes from './components/Classes';
+import ExperienceBar from './components/ExperienceBar';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -21,12 +22,13 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <ExperienceBar />
-        <ServiceGrid />
         <About />
+        <Features />
+        <Classes />
+        <ExperienceBar />
         <Testimonials />
         <Pricing />
-        <FAQ />
+        <Blog />
         <Contact />
       </main>
       <Footer />

@@ -4,10 +4,13 @@ import { Menu, X } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 
 const navLinks = [
-  { name: 'Services', href: '#services' },
+  { name: 'Home', href: '/' },
   { name: 'About', href: '#about' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Contact', href: '#contact' },
+  { name: 'Plan / Pricing', href: '#pricing' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Blog', href: '#blog' },
+  { name: 'BMR', href: '#' },
 ];
 
 export default function Header() {
@@ -33,25 +36,28 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled 
-          ? 'bg-brand-black/80 backdrop-blur-md py-4 border-white/10' 
-          : 'bg-transparent py-6 border-transparent'
+          ? 'bg-brand-black/90 backdrop-blur-md py-4' 
+          : 'bg-transparent py-6'
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="/" className="text-2xl font-display tracking-tighter flex items-center gap-2 group">
-          <span className="text-brand-accent group-hover:text-white transition-colors">AK</span>
-          <span className="text-white">FIT</span>
+        <a href="/" className="text-2xl font-display tracking-tight flex items-center gap-2 group">
+          <div className="w-8 h-8 rounded-full border-2 border-brand-accent flex items-center justify-center">
+            <div className="w-2 h-2 rounded-full bg-brand-accent" />
+          </div>
+          <span className="text-white font-bold">FIT</span>
+          <span className="text-brand-accent font-bold">FACTORY</span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium uppercase tracking-widest text-white/70 hover:text-brand-accent transition-colors"
+              className="text-xs font-bold uppercase tracking-widest text-white hover:text-brand-accent transition-colors"
             >
               {link.name}
             </a>
@@ -60,7 +66,7 @@ export default function Header() {
             onClick={scrollToContact}
             className="bg-brand-accent text-brand-black px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-white transition-all transform hover:scale-105 active:scale-95"
           >
-            Book Training
+            Free Trial
           </button>
         </nav>
 

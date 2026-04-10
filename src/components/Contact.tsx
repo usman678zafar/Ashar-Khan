@@ -19,7 +19,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold uppercase tracking-widest text-xs text-white/40 mb-1">Call Us</h4>
-                  <p className="text-lg">+92 300 1234567</p>
+                  <p className="text-lg">03132724254</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -28,7 +28,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold uppercase tracking-widest text-xs text-white/40 mb-1">Email Us</h4>
-                  <p className="text-lg">hello@asharkhan.fit</p>
+                  <p className="text-lg">Asharmuhammad255@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">

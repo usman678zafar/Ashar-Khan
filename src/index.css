@@ -7,8 +7,8 @@
 
   --color-brand-black: #0A0A0A;
   --color-brand-charcoal: #1A1A1A;
-  --color-brand-accent: #CCFF00;
-  --color-brand-cyan: #00FFFF;
+  --color-brand-accent: #FFB800; /* Gold/Yellow from images */
+  --color-brand-white: #FFFFFF;
 }
 
 @layer base {
