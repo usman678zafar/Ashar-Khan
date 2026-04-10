@@ -23,8 +23,8 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-full border-2 border-brand-accent flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-brand-accent" />
               </div>
-              <span className="text-white font-bold">FIT</span>
-              <span className="text-brand-accent font-bold">FACTORY</span>
+              <span className="text-white font-bold">ASHAR KHAN</span>
+              <span className="text-brand-accent font-bold">FITNESS</span>
             </a>
             
             <div className="grid grid-cols-2 gap-8">
@@ -84,7 +84,7 @@ export default function Footer() {
       <div className="bg-brand-accent py-4">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-brand-black text-[10px] font-bold uppercase tracking-widest">
-            Copyright © 2026 FitFactory
+            Copyright © 2026 Ashar Khan Fitness
           </div>
           <button 
             onClick={scrollToTop}

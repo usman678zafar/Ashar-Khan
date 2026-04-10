@@ -47,8 +47,8 @@ export default function Header() {
           <div className="w-8 h-8 rounded-full border-2 border-brand-accent flex items-center justify-center">
             <div className="w-2 h-2 rounded-full bg-brand-accent" />
           </div>
-          <span className="text-white font-bold">FIT</span>
-          <span className="text-brand-accent font-bold">FACTORY</span>
+          <span className="text-white font-bold">ASHAR KHAN</span>
+          <span className="text-brand-accent font-bold">FITNESS</span>
         </a>
 
         {/* Desktop Nav */}
